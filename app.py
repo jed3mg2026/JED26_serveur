@@ -294,7 +294,7 @@ def admin():
         "total_ratings": total_ratings,
         "avg_score": avg_score_row or 0,
         "posters_with_ratings": posters_rated,
-        "total_posters": db.execute("SELECT COUNT(DISTINCT poster_id) FROM ratings").fetchone()[0] or 0,
+        "total_posters": 34,
         "max_ratings": max_r,
     }
 
