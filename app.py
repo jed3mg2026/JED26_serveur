@@ -42,7 +42,7 @@ def init_db():
                 participant_topic TEXT,
                 poster_id       TEXT NOT NULL,
                 poster_title    TEXT,
-                score           INTEGER NOT NULL CHECK(score BETWEEN 1 AND 5),
+                score           INTEGER NOT NULL CHECK(score BETWEEN 1 AND 10),
                 comment         TEXT,
                 submitted_at    TEXT NOT NULL,
                 UNIQUE(participant_id, poster_id)
@@ -159,11 +159,11 @@ ADMIN_HTML = """
     tr:last-child td { border-bottom: none; }
     tr:hover td { background: #fafaf8; }
     .score-badge { display: inline-block; width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: white; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; text-align: center; line-height: 28px; }
-    .score-5 { background: #16a34a; }
-    .score-4 { background: #65a30d; }
-    .score-3 { background: #d97706; }
-    .score-2 { background: #dc2626; }
-    .score-1 { background: #7f1d1d; }
+    .score-10, .score-9 { background: #16a34a; }
+    .score-8,  .score-7 { background: #65a30d; }
+    .score-6,  .score-5 { background: #d97706; }
+    .score-4,  .score-3 { background: #dc2626; }
+    .score-2,  .score-1 { background: #7f1d1d; }
     .progress { background: #e5e7eb; border-radius: 100px; height: 8px; margin-top: 4px; }
     .progress-fill { background: var(--green); border-radius: 100px; height: 8px; }
     .empty { color: var(--muted); font-size: 14px; padding: 32px; text-align: center; }
