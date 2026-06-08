@@ -83,7 +83,7 @@ def submit_ratings():
                 score        = int(r.get("score", 0))
                 comment      = str(r.get("comment", ""))
 
-                if not poster_id or score < 1 or score > 5:
+                if not poster_id or score < 1 or score > 10:
                     continue
 
                 db.execute("""
@@ -286,7 +286,7 @@ def admin():
         """).fetchall()
 
         recent = db.execute("""
-            SELECT * FROM ratings ORDER BY submitted_at DESC LIMIT 30
+            SELECT * FROM ratings ORDER BY submitted_at DESC LIMIT 32
         """).fetchall()
 
     stats = {
@@ -294,7 +294,7 @@ def admin():
         "total_ratings": total_ratings,
         "avg_score": avg_score_row or 0,
         "posters_with_ratings": posters_rated,
-        "total_posters": 34,
+        "total_posters": 32,
         "max_ratings": max_r,
     }
 
