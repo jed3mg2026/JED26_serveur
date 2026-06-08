@@ -189,7 +189,7 @@ ADMIN_HTML = """
   </div>
   <div class="stat-card">
     <div class="stat-num">{{ "%.1f"|format(stats.avg_score) if stats.avg_score else "—" }}</div>
-    <div class="stat-label">Note moyenne / 5</div>
+    <div class="stat-label">Note moyenne / 10</div>
   </div>
   <div class="stat-card">
     <div class="stat-num">{{ stats.posters_with_ratings }}/{{ stats.total_posters }}</div>
